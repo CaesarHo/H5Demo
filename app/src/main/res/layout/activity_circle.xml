@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <fragment
+        android:id="@+id/frag_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="com.tencent.tencentmap.mapsdk.maps.SupportMapFragment" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_panel"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_add_circle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/add_circle" />
+
+            <Button
+                android:id="@+id/btn_remove_circle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/remove_circle" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/PanelLineStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stroke_width"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <SeekBar
+                android:id="@+id/sb_width"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:progress="10"
+                android:max="100" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/PanelLineStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/transparency"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <SeekBar
+                android:id="@+id/sb_transparency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:progress="100"
+                android:max="255" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/PanelLineStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hue"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <SeekBar
+                android:id="@+id/sb_hue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:progress="100"
+                android:max="360"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

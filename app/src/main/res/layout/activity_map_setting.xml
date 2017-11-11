@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <fragment
+        android:id="@+id/frag_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        class="com.tencent.tencentmap.mapsdk.maps.SupportMapFragment"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:background="@color/bg_panel"
+        android:orientation="vertical"
+        android:paddingRight="10dp" >
+
+        <CheckBox
+            android:id="@+id/cb_all_gesture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="所有手势" />
+
+        <CheckBox
+            android:id="@+id/cb_compass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="指南针" />
+
+        <CheckBox
+            android:id="@+id/cb_zoom_widget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="缩放控件" />
+
+        <CheckBox
+            android:id="@+id/cb_location_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="定位控件" />
+
+        <CheckBox
+            android:id="@+id/cb_rotate_gesture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="旋屏手势" />
+
+        <CheckBox
+            android:id="@+id/cb_scroll_gesture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="划屏手势" />
+
+        <CheckBox
+            android:id="@+id/cb_tilt_gesture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="视角手势" />
+
+        <CheckBox
+            android:id="@+id/cb_zoom_gesture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="缩放手势" />
+    </LinearLayout>
+
+</RelativeLayout>
