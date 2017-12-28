@@ -100,7 +100,9 @@
         <activity android:name=".activitys.J6Test1Activity" />
         <activity android:name=".activitys.J6Test2Activity" />
         <activity android:name=".activitys.VideoActivity" />
-        <activity android:name=".activitys.NetWorkVideoActivity"></activity>
+        <activity android:name=".activitys.NetWorkVideoActivity" />
+        <activity android:name=".activitys.GPSActivity" />
+        <activity android:name=".activitys.ThirdActivity"></activity>
     </application>
 
 </manifest>

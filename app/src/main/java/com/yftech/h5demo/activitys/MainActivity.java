@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private WebView mWeb = null;
     private LinearLayout ll_root;
     private EditText et_user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,31 +59,34 @@ public class MainActivity extends AppCompatActivity {
         settings.setJavaScriptEnabled(true);
         //加载本地html文件
         mWeb.loadUrl("file:///android_asset/map_test4.html");
-        mWeb.addJavascriptInterface(new JSInterface(),"Android");
+        mWeb.addJavascriptInterface(new JSInterface(), "Android");
     }
 
     //按钮的点击事件
-    public void click(View view){
+    public void click(View view) {
         //java调用JS方法
-        mWeb.loadUrl("javascript:javaCallJs(" + "'" + et_user.getText().toString()+"'"+")");
+        mWeb.loadUrl("javascript:javaCallJs(" + "'" + et_user.getText().toString() + "'" + ")");
     }
 
-    public void clickAsync(View  view){
-        Intent intent = new Intent(this,AsyncActivity.class);
-        startActivity(intent);
-    }
-    public  void clickMap(View view){
-        Intent intent = new Intent(this, com.yftech.h5demo.map.MainActivity.class);
+    public void clickAsync(View view) {
+        Intent intent = new Intent(this, AsyncActivity.class);
         startActivity(intent);
     }
 
-    public void clickJ6Test(View view){
-        Intent intent = new Intent(this,J6Test1Activity.class);
+    public void clickMap(View view) {
+//        Intent intent = new Intent(this, com.yftech.h5demo.map.MainActivity.class);
+//        startActivity(intent);
+        Intent intent = new Intent(this, GPSActivity.class);
         startActivity(intent);
     }
 
-    public  void clickVideo(View view){
-        Intent intent = new Intent(this,VideoActivity.class);
+    public void clickJ6Test(View view) {
+        Intent intent = new Intent(this, J6Test1Activity.class);
+        startActivity(intent);
+    }
+
+    public void clickVideo(View view) {
+        Intent intent = new Intent(this, VideoActivity.class);
         startActivity(intent);
     }
 
@@ -100,8 +104,8 @@ public class MainActivity extends AppCompatActivity {
     private class JSInterface {
         //JS需要调用的方法
         @JavascriptInterface
-        public void showToast(String arg){
-            Toast.makeText(MainActivity.this,arg,Toast.LENGTH_SHORT).show();
+        public void showToast(String arg) {
+            Toast.makeText(MainActivity.this, arg, Toast.LENGTH_SHORT).show();
         }
     }
 }

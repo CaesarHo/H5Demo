@@ -22,30 +22,31 @@ import android.widget.RelativeLayout;
 import com.yftech.h5demo.R;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
+import butterknife.Unbinder;
 
 
 /**
  * Created by mfp on 15-12-22.
  */
-public class VideoActivity extends Activity implements GestureDetector.OnGestureListener, View
-        .OnClickListener {
-    @InjectView(R.id.mProgress)
+public class VideoActivity extends Activity implements GestureDetector.OnGestureListener, View.OnClickListener {
+    @BindView(R.id.mProgress)
     ProgressBar mProgress;
 
-    @InjectView(R.id.webview)
+    @BindView(R.id.webview)
     WebView mWebView;
 
-    @InjectView(R.id.layout_back)
+    @BindView(R.id.layout_back)
     RelativeLayout layout_back;
 
-    @InjectView(R.id.img_browser_back)
+    @BindView(R.id.img_browser_back)
     ImageView img_browser_back;
 
-    @InjectView(R.id.img_browser_next)
+    @BindView(R.id.img_browser_next)
     ImageView img_browser_next;
-    @InjectView(R.id.txt_network)
+    @BindView(R.id.txt_network)
     Button txt_network;
+    private Unbinder unbinder;
 
 
     private String url;
@@ -54,11 +55,12 @@ public class VideoActivity extends Activity implements GestureDetector.OnGesture
     private int flingWidth;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
-        ButterKnife.inject(this);
+        unbinder =  ButterKnife.bind(this);
         layout_back.setOnClickListener(this);
         img_browser_back.setOnClickListener(this);
         img_browser_next.setOnClickListener(this);
@@ -122,6 +124,11 @@ public class VideoActivity extends Activity implements GestureDetector.OnGesture
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbinder.unbind();
+    }
 
     @Override
     public void onClick(View view) {
